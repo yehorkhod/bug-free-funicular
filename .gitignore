@@ -1,0 +1,6 @@
+__pycache__/
+output_lora/
+.start.sh
+.venv/
+data/
+.env
