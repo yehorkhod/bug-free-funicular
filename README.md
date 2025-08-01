@@ -7,7 +7,12 @@
    pip install -r requirements.txt
    ```
 
-2. **Run the server**:
+2. **Put your Hugging Face API Key in `.env`**
+   ```
+   HF_API_KEY=...
+   ```
+
+3. **Run the server**:
    ```bash
    fastapi dev main.py
    ```
@@ -73,20 +78,21 @@ python test.py
 
 ```
 .
-├── main.py          # Endpoints
+├── main.py          # FastAPI endpoints
 ├── parser.py        # Chat processing logic
 ├── train.py         # LoRA training logic
 ├── models.py        # Models
 ├── test.py          # Tests
-└── requirements.txt # Dependencies
+├── requirements.txt # Dependencies
+└── README.md        # This file
 ```
 
 ## LoRA Configuration
 
 The training uses the following LoRA configuration:
-- **r**: 8
-- **alpha**: 16
-- **target_modules**: ["q_proj", "v_proj"]
+- **r**: 8 (rank)
+- **alpha**: 16 (scaling factor)
+- **target_modules**: ["q_proj", "v_proj"] (attention modules to adapt)
 - **dropout**: 0.1
 - **Training**: 1 epoch, batch size = 1
 
