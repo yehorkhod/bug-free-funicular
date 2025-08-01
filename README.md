@@ -110,7 +110,8 @@ The training uses the following LoRA configuration:
 
 ## TODOs
 
-- Add tuning possible on multiple devices (e.g. few gpus)
+- Make tuning possible on multiple devices (e.g. few gpus)
 - Add wandb integration
 - Add evaluation
 - Make dataset formating dependent on the model
+- Add context to messages
